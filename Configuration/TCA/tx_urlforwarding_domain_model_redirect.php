@@ -155,7 +155,8 @@ return [
                 'foreign_table_where' => 'ORDER BY sys_language.title',
                 'items' => [
                     ['LLL:EXT:lang/locallang_general.xlf:LGL.default_value', 0]
-                ]
+                ],
+                'default' => 0,
             ]
         ],
         'l10n_parent' => [
@@ -280,7 +281,8 @@ return [
             'config' => [
                 'type' => 'input',
                 'size' => 30,
-                'eval' => 'trim, required, nospace'
+                'eval' => 'trim, required, nospace',
+                'default' => ''
             ]
         ],
         'internal_page' => [
@@ -326,13 +328,14 @@ return [
                 'type' => 'input',
                 'size' => 30,
                 'eval' => 'trim, required',
-                'softref' => 'substitute'
+                'softref' => 'substitute',
+                'default' => ''
             ]
         ],
         'internal_file' => [
             'exclude' => false,
             'label' => 'LLL:EXT:url_forwarding/Resources/Private/Language/TCA/Redirect.xlf:internal_file',
-            'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
+            'config' => array_merge(['default' => ''], \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
                 'internal_file',
                 [
                     'overrideChildTca' => [
@@ -378,7 +381,7 @@ return [
                     ]
                 ],
                 'jpg, jpeg, gif, png, pdf, doc, docx, xls, xlsx, ppt, pptx'
-            )
+            ))
         ],
         'path' => [
             'exclude' => false,
@@ -386,7 +389,8 @@ return [
             'config' => [
                 'type' => 'input',
                 'size' => 30,
-                'eval' => 'trim, required, nospace'
+                'eval' => 'trim, required, nospace',
+                'default' => ''
             ]
         ],
         'domain' => [
@@ -418,7 +422,8 @@ return [
                 'size' => '10',
                 'max' => '20',
                 'type' => 'input',
-                'eval' => 'date'
+                'eval' => 'date',
+                'default' => '0'
             ]
         ],
         'request_note' => [
