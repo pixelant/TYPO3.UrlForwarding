@@ -318,7 +318,8 @@ return [
             'config' => [
                 'type' => 'input',
                 'size' => 30,
-                'eval' => 'trim, nospace'
+                'eval' => 'trim, nospace',
+                'default' => ''
             ]
         ],
         'external_url' => [
